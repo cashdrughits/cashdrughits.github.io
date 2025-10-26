@@ -144,7 +144,7 @@ function updateCurrencySelects() {
     }
     
     if (!currentTo) {
-        const usdOption = toSelect.querySelector('option[value="USD_WHITE"]');
+        const usdOption = toSelect.querySelector('option[value="USD_BLUE"]');
         if (usdOption) usdOption.selected = true;
     }
 }
@@ -154,8 +154,8 @@ function loadStaticCurrencies() {
     console.log("Loading static currencies...");
     
     currencies = [
-        { code: 'USD_WHITE', flag: 'us', name: 'Доллар США (белый)', buy: 79.0, sell: 81.0, showRates: true },
         { code: 'USD_BLUE', flag: 'us', name: 'Доллар США (синий)', buy: 81.0, sell: 81.9, showRates: true },
+        { code: 'USD_WHITE', flag: 'us', name: 'Доллар США (белый)', buy: 79.0, sell: 81.0, showRates: true },
         { code: 'EUR', flag: 'eu', name: 'Евро', buy: 94.0, sell: 95.5, showRates: true },
         { code: 'GBP', flag: 'gb', name: 'Фунт стерлингов', buy: 0, sell: 0, showRates: false },
         { code: 'CNY', flag: 'cn', name: 'Китайский юань', buy: 0, sell: 0, showRates: false },
