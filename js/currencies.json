@@ -1,0 +1,52 @@
+{
+  "currencies": [
+    {
+      "code": "USD_BLUE",
+      "flag": "us", 
+      "name": "Доллар США (синий)",
+      "buy": 81.0,
+      "sell": 81.9,
+      "showRates": true
+    },
+    {
+      "code": "USD_WHITE", 
+      "flag": "us",
+      "name": "Доллар США (белый)",
+      "buy": 79.0,
+      "sell": 81.0,
+      "showRates": true
+    },
+    {
+      "code": "EUR",
+      "flag": "eu",
+      "name": "Евро", 
+      "buy": 94.0,
+      "sell": 95.5,
+      "showRates": true
+    },
+    {
+      "code": "GBP",
+      "flag": "gb",
+      "name": "Фунт стерлингов",
+      "buy": 0,
+      "sell": 0,
+      "showRates": false
+    },
+    {
+      "code": "CNY",
+      "flag": "cn", 
+      "name": "Китайский юань",
+      "buy": 0,
+      "sell": 0,
+      "showRates": false
+    },
+    {
+      "code": "RUB",
+      "flag": "ru",
+      "name": "Российский рубль", 
+      "buy": 1,
+      "sell": 1,
+      "showRates": true
+    }
+  ]
+}
