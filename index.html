@@ -4,6 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Опер касса — обмен валют</title>
+  <meta name="description" content="Круглосуточный обмен валют в Москве. Лучший курс доллара, евро, юаня. Работаем 24/7">
+  <meta name="keywords" content="обмен валют, курс доллара, евро, юань, Москва, круглосуточно">
+  <meta property="og:title" content="Опер касса — обмен валют в Москве">
+  <meta property="og:description" content="Круглосуточный обмен валют по лучшему курсу в Москве">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://oper-kassa.online/">
+
+  <meta property="og:image" content="https://oper-kassa.online/images/icons/android-chrome-512x512.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oper-kassa.online/">
+  <meta property="og:site_name" content="Опер касса">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Опер касса — обмен валют в Москве">
+  <meta name="twitter:description" content="Круглосуточный обмен валют по лучшему курсу">
+  <meta name="twitter:image" content="https://oper-kassa.online/images/icons/android-chrome-512x512.png">
 
   <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/favicon-32x32.png">
@@ -18,7 +36,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <!-- Firebase Database -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     .transition-theme { transition: all 0.4s ease; }
@@ -128,7 +146,7 @@
             <a href="tel:+79616269999" class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-black font-bold rounded-xl transition transform hover:scale-105 shadow-lg">
               📞 Позвонить
             </a>
-            <a href="https://wa.me/79616269999" target="_blank" class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl transition transform hover:scale-105 shadow-lg flex items-center gap-2">
+            <a href="https://wa.me/79616269999?text=Здравствуйте, хочу заказать обмен" target="_blank" class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white font-bold rounded-xl transition transform hover:scale-105 shadow-lg flex items-center gap-2">
               <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5" />
               WhatsApp
             </a>
@@ -156,12 +174,16 @@
           </div>
         </div>
 
-        <div class="relative">
+        <div class="relative max-w-2xl mx-auto">
           <div class="float-animation">
-            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=600&fit=crop" 
+            <img src="./images/other/hero-currency.png"
+                  onerror="this.src='https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'" 
                  alt="Currency Exchange" 
-                 class="rounded-3xl shadow-2xl w-full object-cover"
-                 style="max-height: 500px;">
+                 class="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
+                 style="max-height: 600px;"
+                 loading="lazy"
+                 >
+                 
           </div>
           <div class="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
           <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
@@ -231,12 +253,14 @@
 
         <div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4 mb-6">
           <p class="text-sm text-center">
-            <span class="text-teal-400 font-semibold">💡 Не стесняйтесь</span> звонить нам!
+            <span class="text-teal-400 font-semibold">💬 Общайтесь удобно!</span> 
+            Звоните или пишите в мессенджеры — ответим мгновенно!
           </p>
         </div>
 
-        <a href="https://t.me/+vNKWzECYT_s0NGI6" class="w-full bg-teal-500 hover:bg-teal-400 text-black font-bold py-4 rounded-xl transition transform hover:scale-105 flex items-center justify-center">
-          Заказать обмен
+        <a href="https://wa.me/79616269999?text=Здравствуйте, хочу заказать обмен" 
+          class="w-full bg-teal-500 hover:bg-teal-400 text-black font-bold py-4 rounded-xl transition transform hover:scale-105 flex items-center justify-center">
+          💰 Заказать обмен
         </a>
       </div>
     </div>
@@ -247,7 +271,10 @@
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Актуальные курсы валют</h2>
         <p class="text-gray-400 text-lg">Для сумм до 5 000 у.е. Обновляется ежедневно</p>
-        <p class="text-sm text-gray-500 mt-2">Для обмена больших сумм звоните — курс будет выгоднее</p>
+            <p class="text-lg font-semibold">
+      💰 Для обмена <span class="text-teal-400 font-bold">больших сумм</span> звоните — 
+      курс будет <span class="text-yellow-400 font-bold">выгоднее</span>!
+    </p>
       </div>
 
 <div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto" id="currencyGrid">
@@ -296,50 +323,69 @@
   </div>
 </section>
 
-  <section class="py-16 transition-theme" id="contact">
-    <div class="container mx-auto px-6">
-      <div class="glass-effect rounded-3xl p-8 md:p-12 border border-gray-800 transition-theme" id="contactCard">
-        <h3 class="text-3xl font-bold text-center mb-8 text-teal-400">Как нас найти</h3>
-        
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <div class="space-y-4">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span class="text-2xl">📍</span>
-              </div>
-              <div>
-                <p class="font-semibold text-lg">Адрес</p>
-                <p class="text-gray-400">ул. Бутырская, д.9к2</p>
-                <p class="text-sm text-teal-400">м. Савёловская</p>
-              </div>
+<section class="py-16 transition-theme" id="contact">
+  <div class="container mx-auto px-6">
+    <div class="glass-effect rounded-3xl p-8 md:p-12 border border-gray-800 transition-theme" id="contactCard">
+      <h3 class="text-3xl font-bold text-center mb-8 text-teal-400">Как нас найти</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">📍</span>
             </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span class="text-2xl">📞</span>
-              </div>
-              <div>
-                <p class="font-semibold text-lg">Телефон</p>
-                <a href="tel:+79616269999" class="text-teal-400 hover:underline text-xl">+7 (961) 626-99-99</a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span class="text-2xl">🕐</span>
-              </div>
-              <div>
-                <p class="font-semibold text-lg">Режим работы</p>
-                <p class="text-teal-400 font-semibold">Круглосуточно, без выходных</p>
-              </div>
+            <div>
+              <p class="font-semibold text-lg">Адрес</p>
+              <p class="text-gray-400">ул. Бутырская, д.9к2</p>
+              <p class="text-sm text-teal-400">м. Савёловская</p>
             </div>
           </div>
-          <!-- MAP -->
-          <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-700"> <iframe src="https://yandex.ru/map-widget/v1/?um=constructor:d1ee44fc04b9525115db7ea78f6ca154cffff81100c43f56e4094a7f7d1a0e8c&source=constructor" width="100%" height="400" frameborder="0" allowfullscreen="true"> </iframe> </div>
-              </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">📞</span>
+            </div>
+            <div>
+              <p class="font-semibold text-lg">Телефон</p>
+              <a href="tel:+79616269999" class="text-teal-400 hover:underline text-xl">+7 (961) 626-99-99</a>
             </div>
           </div>
-  </section>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">🕐</span>
+            </div>
+            <div>
+              <p class="font-semibold text-lg">Режим работы</p>
+              <p class="text-teal-400 font-semibold">Круглосуточно, без выходных</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pt-4">
+            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-6 h-6" />
+            </div>
+            <div>
+              <a href="https://wa.me/79616269999?text=Здравствуйте, хочу заказать обмен" 
+                 class="text-green-500 hover:text-green-400 font-semibold text-lg inline-flex items-center gap-2">
+                Написать в WhatsApp
+              </a>
+              <p class="text-sm text-gray-400 mt-1">Ответим в течение 2 минут</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-700 h-full min-h-[400px]">
+          <iframe 
+            src="https://yandex.ru/map-widget/v1/?um=constructor:d1ee44fc04b9525115db7ea78f6ca154cffff81100c43f56e4094a7f7d1a0e8c&source=constructor" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            allowfullscreen="true">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section id="reviews" class="py-16 transition-theme">
     <div class="container mx-auto px-4">
@@ -523,32 +569,42 @@
   <script type="module">
 
   // Import the functions you need from the SDKs you need
+
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
+
   // https://firebase.google.com/docs/web/setup#available-libraries
+
+
   // Your web app's Firebase configuration
+
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
   const firebaseConfig = {
 
     apiKey: "AIzaSyBEkeEt6z6LKmrWtTdhbc9QkqsyHX4cpv0",
+
     authDomain: "oper-kassa.firebaseapp.com",
+
     databaseURL: "https://oper-kassa-default-rtdb.europe-west1.firebasedatabase.app",
+
     projectId: "oper-kassa",
+
     storageBucket: "oper-kassa.firebasestorage.app",
+
     messagingSenderId: "769811650511",
+
     appId: "1:769811650511:web:b62446244b0d9bb98264ba",
+
     measurementId: "G-K8SMBQEYJT"
 
   };
 
-
-  // Initialize Firebase
-
   const app = initializeApp(firebaseConfig);
+
   const analytics = getAnalytics(app);
 
 </script>
