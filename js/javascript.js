@@ -1,7 +1,5 @@
 const apiUrl = "https://api.oper-kassa.online/api/rates";
-
 let currencies = [];
-
 async function loadCurrencies() {
     console.log("Starting currency loading process...");
 
@@ -553,3 +551,4 @@ if (toggle && toggleBg && toggleCircle) {
 }
 window.scrollToTop = scrollToTop;
 window.calculateExchange = calculateExchange;
+
