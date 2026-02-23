@@ -219,64 +219,69 @@
         <p class="text-gray-400 text-lg">Рассчитайте сумму обмена онлайн</p>
       </div>
 
-      <div class="max-w-3xl mx-auto glass-effect rounded-3xl p-8 border border-gray-800 transition-theme" id="calculatorCard">
+      <div class="max-w-md mx-auto glass-effect rounded-3xl p-8 border border-gray-800 transition-theme" id="calculatorCard">
 
-        <div id="calcModeToggle" data-mode="buy" class="flex items-center bg-gray-800 rounded-2xl p-1 mb-6 gap-1">
+        <div id="calcModeToggle" data-mode="buy"
+            class="flex items-center bg-gray-800 rounded-2xl p-1 mb-6 gap-1">
           <button
             id="calcModeSell"
             type="button"
             class="flex-1 py-2.5 px-4 rounded-xl font-semibold text-sm transition-all duration-200 text-gray-400 hover:text-gray-200"
           >
-            Я продаю 
+            Я продаю
           </button>
           <button
             id="calcModeBuy"
             type="button"
             class="flex-1 py-2.5 px-4 rounded-xl font-semibold text-sm transition-all duration-200 bg-teal-500 text-black shadow-md"
           >
-            Я покупаю 
+            Я покупаю
           </button>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label class="block text-sm font-semibold mb-2 text-gray-400">Отдаёте</label>
-            <select id="fromCurrency" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:border-teal-400 focus:outline-none transition">
-              <option value="USD">USD - Доллар США</option>
-              <option value="EUR">EUR - Евро</option>
-              <option value="RUB" selected>RUB - Российский рубль</option>
-              <option value="GBP">GBP - Фунт стерлингов</option>
-              <option value="CNY">CNY - Китайский юань</option>
-            </select>
-            <input type="number" id="fromAmount" placeholder="Введите сумму" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 mt-3 focus:border-teal-400 focus:outline-none transition" value="10000">
-          </div>
+        <div class="flex gap-3 mb-5">
+          <input
+            type="number"
+            id="foreignAmount"
+            placeholder="Сумма"
+            value="100"
+            min="0"
+            class="w-32 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-lg font-semibold focus:border-teal-400 focus:outline-none transition"
+          />
 
-          <div>
-            <label class="block text-sm font-semibold mb-2 text-gray-400">Получаете</label>
-            <select id="toCurrency" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:border-teal-400 focus:outline-none transition">
-              <option value="USD" selected>USD - Доллар США</option>
-              <option value="EUR">EUR - Евро</option>
-              <option value="RUB">RUB - Российский рубль</option>
-              <option value="GBP">GBP - Фунт стерлингов</option>
-              <option value="CNY">CNY - Китайский юань</option>
-            </select>
-            <div id="toAmount" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 mt-3 text-2xl font-bold text-teal-400 flex items-center justify-center h-14">
-              ~
-            </div>
-          </div>
+          <select
+            id="foreignCurrency"
+            class="flex-1 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:border-teal-400 focus:outline-none transition text-sm"
+          >
+            <option value="USD_BLUE">USD — Доллар США (синий)</option>
+            <option value="USD_WHITE">USD — Доллар США (белый)</option>
+            <option value="EUR">EUR — Евро</option>
+            <option value="GBP">GBP — Фунт стерлингов</option>
+            <option value="CNY">CNY — Китайский юань</option>
+          </select>
+        </div>
+
+        <div id="calcResultBox"
+            class="bg-gray-900/60 border border-gray-700 rounded-2xl px-5 py-4 mb-6">
+          <p class="text-sm text-gray-400 mb-1">
+            <span id="calcResultLabel">Вы отдаёте:</span>
+          </p>
+          <p id="calcResultAmount" class="text-3xl font-bold text-teal-400">—</p>
+          <p id="calcRateInfo" class="text-xs text-gray-500 mt-2"></p>
         </div>
 
         <div class="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4 mb-6">
           <p class="text-sm text-center">
-            <span class="text-teal-400 font-semibold">💬 Связаться удобно!</span> 
+            <span class="text-teal-400 font-semibold">💬 Связаться удобно!</span>
             Звоните или пишите в мессенджеры — ответим мгновенно!
           </p>
         </div>
 
-        <a href="https://wa.me/79616269999?text=Здравствуйте, хочу заказать обмен" 
+        <a href="https://wa.me/79616269999?text=Здравствуйте, хочу заказать обмен"
           class="w-full bg-teal-500 hover:bg-teal-400 text-black font-bold py-4 rounded-xl transition transform hover:scale-105 flex items-center justify-center">
           💰 Заказать обмен
         </a>
+
       </div>
     </div>
   </section>
