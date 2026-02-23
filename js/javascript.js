@@ -341,6 +341,30 @@ document.addEventListener('DOMContentLoaded', function() {
         fromCurrency.addEventListener('change', calculateExchange);
         toCurrency.addEventListener('change', calculateExchange);
     }
+
+        const calcModeBuy = document.getElementById('calcModeBuy');
+    const calcModeSell = document.getElementById('calcModeSell');
+    const calcModeToggle = document.getElementById('calcModeToggle');
+
+    if (calcModeBuy && calcModeSell && calcModeToggle) {
+        calcModeBuy.addEventListener('click', () => {
+            calcModeToggle.dataset.mode = 'buy';
+            calcModeBuy.classList.add('bg-teal-500', 'text-black', 'shadow-md');
+            calcModeBuy.classList.remove('text-gray-400');
+            calcModeSell.classList.remove('bg-teal-500', 'text-black', 'shadow-md');
+            calcModeSell.classList.add('text-gray-400');
+            calculateExchange();
+        });
+
+        calcModeSell.addEventListener('click', () => {
+            calcModeToggle.dataset.mode = 'sell';
+            calcModeSell.classList.add('bg-teal-500', 'text-black', 'shadow-md');
+            calcModeSell.classList.remove('text-gray-400');
+            calcModeBuy.classList.remove('bg-teal-500', 'text-black', 'shadow-md');
+            calcModeBuy.classList.add('text-gray-400');
+            calculateExchange();
+        });
+    }
 });
 
 function calculateExchange() {
@@ -348,7 +372,7 @@ function calculateExchange() {
     const fromCurrency = document.getElementById('fromCurrency');
     const toCurrency = document.getElementById('toCurrency');
     const toAmount = document.getElementById('toAmount');
-    
+
     if (!fromAmount || !fromCurrency || !toCurrency || !toAmount) return;
 
     const amount = parseFloat(fromAmount.value) || 0;
@@ -360,20 +384,44 @@ function calculateExchange() {
         return;
     }
 
-    const fromRate = currencies.find(c => c.code === from)?.sell || 1;
-    const toRate = currencies.find(c => c.code === to)?.buy || 1;
+    // Определяем режим: buy = клиент покупает у нас, sell = клиент продаёт нам
+    const mode = document.getElementById('calcModeToggle')?.dataset.mode || 'buy';
+
+    const fromCurrencyData = currencies.find(c => c.code === from);
+    const toCurrencyData = currencies.find(c => c.code === to);
 
     let result;
-    if (from === 'RUB') {
-        result = amount / toRate;
-    } else if (to === 'RUB') {
-        result = amount * fromRate;
+
+    if (mode === 'buy') {
+        // Клиент ПОКУПАЕТ валюту — обменник продаёт → курс sell
+        if (from === 'RUB') {
+            // Отдаёт рубли, получает валюту → делим на sell той валюты
+            result = amount / (toCurrencyData?.sell || 1);
+        } else if (to === 'RUB') {
+            // Отдаёт валюту... но в режиме "я покупаю" так не бывает логично,
+            // но на всякий случай: продаём валюту по sell
+            result = amount * (fromCurrencyData?.sell || 1);
+        } else {
+            // Валюта → валюта: через рубли по sell
+            const inRub = amount * (fromCurrencyData?.sell || 1);
+            result = inRub / (toCurrencyData?.sell || 1);
+        }
     } else {
-        const inRub = amount * fromRate;
-        result = inRub / toRate;
+        // Клиент ПРОДАЁТ валюту — обменник покупает → курс buy
+        if (to === 'RUB') {
+            // Отдаёт валюту, получает рубли → умножаем на buy
+            result = amount * (fromCurrencyData?.buy || 1);
+        } else if (from === 'RUB') {
+            // Отдаёт рубли, получает валюту по buy
+            result = amount / (toCurrencyData?.buy || 1);
+        } else {
+            // Валюта → валюта: через рубли по buy
+            const inRub = amount * (fromCurrencyData?.buy || 1);
+            result = inRub / (toCurrencyData?.buy || 1);
+        }
     }
 
-    toAmount.textContent = result.toFixed(2) + ' ' + getCurrencyDisplayCode(currencies.find(c => c.code === to));
+    toAmount.textContent = result.toFixed(2) + ' ' + getCurrencyDisplayCode(toCurrencyData);
 }
 
 function scrollToTop() {
@@ -551,7 +599,3 @@ if (toggle && toggleBg && toggleCircle) {
 }
 window.scrollToTop = scrollToTop;
 window.calculateExchange = calculateExchange;
-
-
-
-
