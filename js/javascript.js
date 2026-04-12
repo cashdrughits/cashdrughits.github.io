@@ -1,4 +1,4 @@
-const apiUrl = "https://api.oper-kassa.online/api/rates";
+const apiUrl = "https://api.operkassa.online/api/rates";
 let currencies = [];
 
 function fetchWithTimeout(url, options = {}, timeoutMs = 180000) {
